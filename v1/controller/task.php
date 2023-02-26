@@ -1,7 +1,8 @@
 <?php
     require_once('db.php');
-    require_once('../model/Task.php');
+    require_once('../model/task.php');
     require_once('../model/Response.php');
+    date_default_timezone_set('America/Sao_Paulo');
 
     try {
         $writeDB = DB::connectWriteDB();
