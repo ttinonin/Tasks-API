@@ -1,4 +1,5 @@
 php_flag display_errors on
+SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0
 
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -11,4 +12,6 @@ RewriteRule ^tasks/page/([0-9]+)$ controller/task.php?page=$1 [L]
 RewriteRule ^tasks$ controller/task.php [L]
 
 RewriteRule ^users$ controller/users.php [L]
-RewriteRule ŝessions$ controller/sessions.php [L]
+
+RewriteRule ^sessions/([0-9]+)$ controller/sessions.php?sessionid=$1 [L]
+RewriteRule ^sessions$ controller/sessions.php [L]
